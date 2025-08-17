@@ -12,7 +12,7 @@ import java.util.*;
 
 public class JobScraper {
 
-    // Map of Companies and their Workday URLs
+    // Companies mapped with urls
     private static final Map<String, String> COMPANY_SITES = new HashMap<>();
 
     static {
@@ -29,11 +29,12 @@ public class JobScraper {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
+        // Set implicit wait
         try {
             driver.get(url);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-            // Infinite scroll simulation
+
             long lastHeight = (long) ((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight");
             for (int i = 0; i < 5; i++) {
                 ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
@@ -44,12 +45,11 @@ public class JobScraper {
                 lastHeight = newHeight;
             }
 
-            // Wait for job titles
             List<WebElement> jobElements = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("a[data-automation-id='jobTitle']"))
             );
 
-            // Fallback if empty
+            // Fallback to a different selector if the first one doesn't find any jobs
             if (jobElements.isEmpty()) {
                 jobElements = driver.findElements(By.cssSelector("div[data-automation-id='jobCard'] a"));
             }
@@ -75,6 +75,7 @@ public class JobScraper {
         return jobs;
     }
 
+    //main method to run the scraper
     public static void main(String[] args) {
         List<Map<String, String>> allJobs = new ArrayList<>();
 
