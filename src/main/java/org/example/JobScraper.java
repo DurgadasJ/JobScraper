@@ -21,6 +21,12 @@ public class JobScraper {
         COMPANY_SITES.put("Deutsche Bank", "https://db.wd3.myworkdayjobs.com/en-US/DBWebsite?q=java&shared_id=YTI2Zjc0OWEtNGU0OC00NGE1LTlhZDMtMzE1OGZjM2JmMjZh&Country=c4f78be1a8f14da0ab49ce1162348a5e&jobFamilyGroup=645e861bc53a0168c673f8fe073b20a8&Location=b3df871f1f9d01ccaebc2b17a8409644&Location=b3df871f1f9d014784a8771aa840824c");
         COMPANY_SITES.put("Western Union", "https://westernunion.wd1.myworkdayjobs.com/en-US/WesternUnionCareers?q=java");
         COMPANY_SITES.put("Master Card", "https://mastercard.wd1.myworkdayjobs.com/en-US/CorporateCareers?q=java&locations=8eab563831bf10acbc722e4859721571&jobFamilyGroup=866c0ed135ff106f00587685e7483440");
+        COMPANY_SITES.put("Cognizant", "https://cognizant.wd3.myworkdayjobs.com/en-US/external/job/India/Java-Developer_00049068801-1?q=java&locations=8eab563831bf10acbc722e4859721571");
+        COMPANY_SITES.put("Accenture", "https://accenture.wd3.myworkdayjobs.com/en-US/accenturecareers/job/India/Java-Developer_00819664?q=java&locations=8eab563831bf10acbc722e4859721571");
+        COMPANY_SITES.put("Johnson ", "https://jci.wd5.myworkdayjobs.com/en-US/JCI?q=java&locations=59c45107aefd0100150a39cae16f0000");
+        COMPANY_SITES.put("Intel", "https://intel.wd1.myworkdayjobs.com/External?q=java&locations=1e4a4eb3adf101f44070f976bf8184cf");
+        COMPANY_SITES.put("Apex Group", "https://theapexgroup.wd3.myworkdayjobs.com/apexgroupcareers?q=java%20&locationCountry=c4f78be1a8f14da0ab49ce1162348a5e");
+        COMPANY_SITES.put("Citi", "https://citi.wd5.myworkdayjobs.com/2/4/refreshFacet/318c8bb6f553100021d223d9780d30be");
     }
 
     public static List<Map<String, String>> getJobsFromSite(String company, String url) {
